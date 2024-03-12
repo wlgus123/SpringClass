@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context-5.0.2.xsd
+	                    http://www.springframework.org/schema/aop
+	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--스프링에게 TestBean 객체 t1을 만들라고 명령을 내린다-->
+<bean id="t1" class="kr.hs.study.beans.TestBean" />
+<!--TestBean t1 = new TestBean(); 과 같음-->
+<!--new TestBean(); 일 경우에는 id를 없애주면 됨-->
+<!--<bean id="t2" class="kr.hs.study.beans.TestBean2" lazy-init="true"/>-->
+<!--lazy-init: 객체를 만드는 시점 -->
+<!--lazy-init = "true": getBean() 안하면 객체가 안만들어짐 (개발자가 필요할 때 만들 수 있음)-->
+
+<bean id="t2" class="kr.hs.study.beans.TestBean2" scope="prototype"/>
+<!--scope="prototype": 주소값 변경. 객체가 하나 더 만들어짐-->
+</beans>
